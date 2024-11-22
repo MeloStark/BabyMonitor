@@ -2,8 +2,8 @@
 
 # Devices
 ## 1. Raspberry Pi zero 2
-OS: Ubuntu Server 22.04.5 LTS 64-bit  
-kernel : 5.15.0-1065-raspi  
+OS: bullseye 64-bit  
+kernel : 6.1.21-v8+  
 architechture : aarch64  
 
 ## 2. IR Camera
