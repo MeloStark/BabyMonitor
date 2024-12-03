@@ -23,7 +23,7 @@ Reference : [ref1](https://tomosoft.jp/design/?p=11471)
 |          WS          | 19(ALT0) |
 |         SEL          | 21(ALT0) |
 |         SCK          | 18(ALT0) |
-|          DO          | 19(ALT0) |
+|          DO          | 20(ALT0) |
 
 i2s microphone setting
 ```bash
@@ -32,7 +32,21 @@ dtparam=i2s=on
 ~~~
 dtoverlay=googlevoicehat-soundcard
 
-$ raspi-gpio set 'PIN num' ALT0
+$ raspi-gpio set 18 ALT0
+$ raspi-gpio get 18
+GPIO 18: level=1 fsel=4 alt=0 func=PCM_CLK
+
+$ raspi-gpio set 19 ALT0
+$ raspi-gpio get 19
+GPIO 19: level=1 fsel=4 alt=0 func=PCM_FS
+
+$ raspi-gpio set 20 ALT0
+$ raspi-gpio get 20
+GPIO 20: level=0 fsel=4 alt=0 func=PCM_DIN
+
+$ raspi-gpio set 21 ALT0
+$ raspi-gpio get 21
+GPIO 21: level=0 fsel=4 alt=0 func=PCM_DOUT
 
 $ arecord -l
 **** List of CAPTURE Hardware Devices ****
@@ -41,9 +55,4 @@ card 0: sndrpigooglevoi [snd_rpi_googlevoicehat_soundcar], device 0: Google voic
   Subdevice #0: subdevice #0
 
 $ arecord -D plughw:0,0 -c1 -r 48000 -f S32_LE -t wav -V mono -v file.wav
-```
-
-# Record sound by python
-```bash
-$ sudo apt-get install -y python3-pyaudio
 ```
