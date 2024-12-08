@@ -56,3 +56,32 @@ card 0: sndrpigooglevoi [snd_rpi_googlevoicehat_soundcar], device 0: Google voic
 
 $ arecord -D plughw:0,0 -c1 -r 48000 -f S32_LE -t wav -V mono -v file.wav
 ```
+
+## 2. Raspberry Pi 4
+OS: Ubuntu 22.04.5 LTS for web server
+
+```bash
+$ sudo apt update
+$ sudo apt install python3 python3-pip -y
+$ pip3 install flask
+```
+
+```
+project_root/
+├── server/                   # Webサーバー関連コード
+│   ├── app.py                # メインのPythonスクリプト
+│   ├── templates/            # HTMLテンプレート
+│   │   └── index.html        # Webページのメインテンプレート
+│   ├── static/               # 静的ファイル（CSS, JS, 画像）
+│   │   ├── css/
+│   │   └── js/
+│   └── logs/                 # ログファイル保存用ディレクトリ
+├── README.md                 # プロジェクトの概要説明
+├── requirements.txt          # Pythonパッケージリスト
+└── .gitignore                # Gitで追跡しないファイルリスト
+```
+
+```bash
+$ pip3 install flask-socketio opencv-python
+$ sudo apt install ffmpeg -y
+```
