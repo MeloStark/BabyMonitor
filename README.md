@@ -6,11 +6,11 @@ OS: bullseye 64-bit
 kernel : 6.1.21-v8+  
 architechture : aarch64  
 
-## 2. IR Camera
+### 1-1. IR Camera
 Maker : [OSOYOO IR-CUT camera](https://www.amazon.co.jp/dp/B0CD7KPH3K?psc=1&ref=ppx_pop_dt_b_product_details)  
 Module : OV5647
 
-## 3. Microphone
+### 1-2. Microphone
 Maker : [Fermion: I2S MEMS Microphone](https://www.dfrobot.com/product-2637.html)  
 Buy from : [switch science](https://www.switch-science.com/products/8792?srsltid=AfmBOoqcv8FdD5tEHdltkeBC67CmGvsm0YxuSpLwuCHaZVdnrEOpOwnC)
 Reference : [ref1](https://tomosoft.jp/design/?p=11471)
@@ -56,3 +56,27 @@ card 0: sndrpigooglevoi [snd_rpi_googlevoicehat_soundcar], device 0: Google voic
 
 $ arecord -D plughw:0,0 -c1 -r 48000 -f S32_LE -t wav -V mono -v file.wav
 ```
+
+## 2. Raspberry Pi 4
+OS: Ubuntu 22.04.5 LTS
+for web server
+
+```bash
+$ sudo apt update
+$ sudo apt install python3 python3-pip -y
+$ pip3 install flask
+```
+### directory configuration
+project_root/
+├── server/                   # Webサーバー関連コード
+│   ├── app.py                # メインのPythonスクリプト
+│   ├── templates/            # HTMLテンプレート
+│   │   └── index.html        # Webページのメインテンプレート
+│   ├── static/               # 静的ファイル（CSS, JS, 画像）
+│   │   ├── css/
+│   │   └── js/
+│   └── logs/                 # ログファイル保存用ディレクトリ
+├── README.md                 # プロジェクトの概要説明
+├── requirements.txt          # Pythonパッケージリスト
+└── .gitignore                # Gitで追跡しないファイルリスト
+
