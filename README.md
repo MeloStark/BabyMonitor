@@ -6,11 +6,11 @@ OS: bullseye 64-bit
 kernel : 6.1.21-v8+  
 architechture : aarch64  
 
-## 2. IR Camera
+### 1-1. IR Camera
 Maker : [OSOYOO IR-CUT camera](https://www.amazon.co.jp/dp/B0CD7KPH3K?psc=1&ref=ppx_pop_dt_b_product_details)  
 Module : OV5647
 
-## 3. Microphone
+### 1-2. Microphone
 Maker : [Fermion: I2S MEMS Microphone](https://www.dfrobot.com/product-2637.html)  
 Buy from : [switch science](https://www.switch-science.com/products/8792?srsltid=AfmBOoqcv8FdD5tEHdltkeBC67CmGvsm0YxuSpLwuCHaZVdnrEOpOwnC)
 Reference : [ref1](https://tomosoft.jp/design/?p=11471)
@@ -58,15 +58,24 @@ $ arecord -D plughw:0,0 -c1 -r 48000 -f S32_LE -t wav -V mono -v file.wav
 ```
 
 ## 2. Raspberry Pi 4
+<<<<<<< HEAD
 OS: Ubuntu 22.04.5 LTS for web server
+=======
+OS: Ubuntu 22.04.5 LTS
+for web server
+>>>>>>> feature/web_server
 
 ```bash
 $ sudo apt update
 $ sudo apt install python3 python3-pip -y
 $ pip3 install flask
 ```
+<<<<<<< HEAD
 
 ```
+=======
+### directory configuration
+>>>>>>> feature/web_server
 project_root/
 ├── server/                   # Webサーバー関連コード
 │   ├── app.py                # メインのPythonスクリプト
@@ -79,9 +88,13 @@ project_root/
 ├── README.md                 # プロジェクトの概要説明
 ├── requirements.txt          # Pythonパッケージリスト
 └── .gitignore                # Gitで追跡しないファイルリスト
+<<<<<<< HEAD
 ```
 
 ```bash
 $ pip3 install flask-socketio opencv-python
 $ sudo apt install ffmpeg -y
 ```
+=======
+
+>>>>>>> feature/web_server
