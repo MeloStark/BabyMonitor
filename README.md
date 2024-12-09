@@ -59,4 +59,7 @@ $ arecord -D plughw:0,0 -c1 -r 48000 -f S32_LE -t wav -V mono -v file.wav
 $ sudo apt install libcamera-tools -y
 $ sudo apt install ffmpeg -y
 $ sudo apt install curl -y
+
+$ sudo apt install libv4l-dev libasound2-dev libcurl4-openssl-dev -y
+$ sudo apt install libavcodec-dev libavformat-dev libswscale-dev -y
 ```
