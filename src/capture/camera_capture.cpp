@@ -12,8 +12,8 @@ int main() {
     }
 
     // カメラの解像度を設定
-    cap.set(CAP_PROP_FRAME_WIDTH, 1280);  // 幅
-    cap.set(CAP_PROP_FRAME_HEIGHT, 720); // 高さ
+    cap.set(CAP_PROP_FRAME_WIDTH, 1280);  // 幅     // 1280 / 640
+    cap.set(CAP_PROP_FRAME_HEIGHT, 720); // 高さ    // 720 / 480
 
     std::cout << "カメラを開きました。フレームをキャプチャしています..." << std::endl;
 
